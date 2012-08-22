@@ -20,6 +20,7 @@
 
 .sheetgallery a img {
     margin:auto;
+    display: block;
 }
 
 
