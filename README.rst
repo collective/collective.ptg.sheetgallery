@@ -1,4 +1,6 @@
 Introduction
 ============
 
-contact sheet display type for collective.plonetruegallery
+sheetgallery display type for collective.plonetruegallery
+
+Inspired by: http://www.fogia.se/sortiment
