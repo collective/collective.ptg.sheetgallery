@@ -1,0 +1,31 @@
+.sheetgallery {
+    margin: 0 0  9px 0;
+    position: relative;
+}
+
+.sheetgallery a {
+    display: block;
+    position: relative;
+    float:  left;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+}
+
+.sheetgallery a img {
+    margin:auto;
+}
+
+.sheetgallery a div {
+ 
+}
+
+.image-desc {
+ 
+}
+a.row_0 {
+	clear: left;
+	margin-left:  0;
+}
+
+
