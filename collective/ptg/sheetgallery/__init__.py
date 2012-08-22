@@ -115,7 +115,7 @@ class SheetgalleryDisplayType(BatchingDisplayType):
 
         return u"""
         <style>
-.sheetgallery a div {
+.sheetgallery a {
     height: %(boxheight)ipx;
     width: %(boxwidth)ipx;
 }

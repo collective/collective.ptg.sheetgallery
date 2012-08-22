@@ -1,6 +1,9 @@
+/* @override http://localhost:8080/XXXxx/++resource++ptg.sheetgallery/style.css */
+
 .sheetgallery {
     margin: 0 0  9px 0;
     position: relative;
+    border-top: 1px solid #eee;  ;
 }
 
 .sheetgallery a {
@@ -10,22 +13,28 @@
     border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;
     text-decoration: none;
+     overflow: hidden;
 }
+
+
 
 .sheetgallery a img {
     margin:auto;
 }
 
-.sheetgallery a div {
- 
-}
 
 .image-desc {
- 
+ display: none;
 }
+
 a.row_0 {
 	clear: left;
 	margin-left:  0;
+	 border-left: 1px solid #eee;
+}
+
+.image-title {
+	display: none;
 }
 
 

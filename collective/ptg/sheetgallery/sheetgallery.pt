@@ -1,11 +1,9 @@
 <div class="sheetgallery" tal:define="steps view/settings/sheetgallery_columns" >
      <tal:images tal:repeat="img view/batch">
     <a href="" tal:define="number repeat/img/index; theclass python:'row_' + str(number%steps)"  tal:attributes="href img/link; class theclass" >
-            <div>
-                <span class="image-title" tal:content="img/title">Title</span> 
+            <span class="image-title" tal:content="img/title">Title</span> 
                 <p class="image-desc" tal:content="structure img/description">Description</p> 
-            </div>
-             <img title="Locomotives Roundhouse"
+            <img title="Locomotives Roundhouse"
                     alt=""
                     src=""
                     tal:attributes="title img/title;

@@ -6,3 +6,21 @@ collective/ptg/sheetgallery/resources/.DS_Store
 collective/.DS_Store
 
 .DS_Store
+
+collective.ptg.sheetgallery.egg-info/PKG-INFO
+
+collective.ptg.sheetgallery.egg-info/not-zip-safe
+
+collective.ptg.sheetgallery.egg-info/namespace_packages.txt
+
+collective.ptg.sheetgallery.egg-info/entry_points.txt
+
+collective.ptg.sheetgallery.egg-info/dependency_links.txt
+
+collective.ptg.sheetgallery.egg-info/SOURCES.txt
+
+collective.ptg.sheetgallery.egg-info/top_level.txt
+
+collective.ptg.sheetgallery.egg-info/requires.txt
+
+*.pyc
