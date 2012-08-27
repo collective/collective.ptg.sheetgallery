@@ -36,10 +36,10 @@ class ISheetgalleryDisplaySettings(IBaseSettings):
         vocabulary=SimpleVocabulary([
             SimpleTerm(0, 0,
                 _(u"label_sheetgallery_overlay_opacity0",
-                    default=u"0 Off")),
+                    default=u"0 Hide it completely")),
             SimpleTerm(0.1, 0.1,
                 _(u"label_sheetgallery_overlay_opacity1",
-                    default=u"0.1 A little")),
+                    default=u"0.1 Almost gone")),
             SimpleTerm(0.2, 0.2,
                 _(u"label_sheetgallery_overlay_opacity2", default=u"0.2")),
             SimpleTerm(0.3, 0.3,
@@ -60,12 +60,20 @@ class ISheetgalleryDisplaySettings(IBaseSettings):
                     default=u"0.8 A bit much")),
             SimpleTerm(0.9, 0.9,
                 _(u"label_sheetgallery_overlay_opacity9",
-                    default=u"0.9 Almost gone")),
+                    default=u"0.9 Almost nothing")),
             SimpleTerm(1, 1,
                 _(u"label_sheetgallery_overlay_opacity10",
-                    default=u"1 Gone")
+                    default=u"1 Off")
             )
         ]))
+    sheetgallery_toppadding = schema.TextLine(
+        title=_(u"label_sheetgallery_toppadding",
+            default=u"Padding above imagetitle"),
+        default=u"100px")
+    sheetgallery_bottompadding = schema.TextLine(
+        title=_(u"label_sheetgallery_bottompadding",
+            default=u"Padding below imagedescription"),
+        default=u"70px")
 
     sheetgallery_style = schema.Choice(
         title=_(u"label_sheetgallery_style",
@@ -104,7 +112,7 @@ $(document).ready(function() {
     $('.sheetgallery div').mouseenter(function() {
         $('.imagebox').fadeTo('fast', 1);
         $('h3.image-title, p.image-desc').hide();    
-        $(this).find('.imagebox').fadeTo('fast', %(overlay_opacity)s);
+        $(this).find('.imagebox').fadeTo(200, %(overlay_opacity)s);
         $(this).find('.image-title').slideDown(%(speed)i);
         $(this).find('.image-desc').slideDown(%(speed)i);
 
@@ -132,9 +140,14 @@ $(document).ready(function() {
     width: %(boxwidth)ipx;
 }
 
-.imagebox:hover {
-    opacity: %(overlay_opacity)s;
+.sheetgallery h3.image-title {
+    padding-top: %(toppadding)s;
 }
+
+.sheetgallery p.image-sedc {
+    padding-bottom: %(bottompadding)s;
+}
+
 
 </style>
 <link rel="stylesheet" type="text/css" href="%(style)s"/>
@@ -143,6 +156,8 @@ $(document).ready(function() {
         'boxheight': self.settings.sheetgallery_imageheight,
         'boxwidth': self.settings.sheetgallery_imagewidth,
         'overlay_opacity': self.settings.sheetgallery_overlay_opacity,
+        'bottompadding' : self.settings.sheetgallery_bottompadding,
+        'toppadding' : self.settings.sheetgallery_toppadding,
         'style': style
        }
 SheetgallerySettings = createSettingsFactory(SheetgalleryDisplayType.schema)
