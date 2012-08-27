@@ -1,23 +1,18 @@
 <div class="sheetgallery" tal:define="steps view/settings/sheetgallery_columns" >
-     <tal:images tal:repeat="img view/batch">
-    <a href="" tal:define="number repeat/img/index; theclass python:'row_' + str(number%steps)"  tal:attributes="href img/link; class theclass" >
-            <span class="image-title" tal:content="img/title">Title</span> 
-                <p class="image-desc" tal:content="structure img/description">Description</p> 
-            <img title="Locomotives Roundhouse"
-                    alt=""
-                    src=""
-                    tal:attributes="title img/title;
-                                    alt img/description;
-                                    src img/image_url" 
-                    tal:condition="not: view/settings/sheetgallery_use_icons" />
-            <img title="Locomotives Roundhouse"
-                    alt=""
-                    src=""
-                    tal:attributes="title img/title;
-                                    alt img/description;
-                                    src img/thumb_url" 
-                    tal:condition="view/settings/sheetgallery_use_icons" />
-
-        </a>       
+    <tal:images tal:repeat="img view/batch">
+    <div tal:define="number repeat/img/index; 
+                      theimage img/image_url;
+                      style python:'background-image:url(' + theimage + ')';
+                      theclass python:'row_' +
+                      str(number%steps) +' column_' + str(number/steps)" 
+            tal:attributes="class theclass;">
+        <div class="imagebox" tal:attributes="style style">
+        </div>  
+        <a href="" tal:attributes="href img/link" >      
+            <h3 class="image-title" tal:content="img/title">Title</h3> 
+        <p class="image-desc" 
+               tal:content="structure img/description">Description</p> 
+        </a>
+    </div>     
     </tal:images>    
 </div>

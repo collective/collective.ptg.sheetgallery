@@ -98,11 +98,23 @@ class SheetgalleryDisplayType(BatchingDisplayType):
 
     def javascript(self):
         return u"""
-     <script type="text/javascript">
-     </script>
+<script type="text/javascript">
+$(document).ready(function() {
+    //when mouse enters
+    $('.sheetgallery div').mouseenter(function() {
+        $('.imagebox').fadeTo('fast', 1);
+        $('h3.image-title, p.image-desc').hide();    
+        $(this).find('.imagebox').fadeTo('fast', %(overlay_opacity)s);
+        $(this).find('.image-title').slideDown(%(speed)i);
+        $(this).find('.image-desc').slideDown(%(speed)i);
 
+    });
+});
+</script>
 """ % {
-    }
+    'speed': self.settings.duration,
+    'overlay_opacity': self.settings.sheetgallery_overlay_opacity,
+}
 
     def css(self):
         relpath = '++resource++ptg.sheetgallery'
@@ -115,10 +127,15 @@ class SheetgalleryDisplayType(BatchingDisplayType):
 
         return u"""
         <style>
-.sheetgallery a {
+.sheetgallery div {
     height: %(boxheight)ipx;
     width: %(boxwidth)ipx;
 }
+
+.imagebox:hover {
+    opacity: %(overlay_opacity)s;
+}
+
 </style>
 <link rel="stylesheet" type="text/css" href="%(style)s"/>
 """ % {
