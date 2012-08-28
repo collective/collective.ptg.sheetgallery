@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0.0'
+version = '1.0.1'
 
 setup(name='collective.ptg.sheetgallery',
       version=version,
@@ -15,8 +15,8 @@ setup(name='collective.ptg.sheetgallery',
         "Programming Language :: Python",
         ],
       keywords='plonetruegaller gallery plone addon',
-      author='Nathan Van Gheem',
-      author_email='vangheem@gmail.com',
+      author='Espen Moe-Nilssen',
+      author_email='espen@medialog.no',
       url='https://github.com/collective/collective.ptg.sheetgallery',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
