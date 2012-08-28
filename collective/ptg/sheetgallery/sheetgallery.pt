@@ -4,7 +4,7 @@
                       theimage img/image_url;
                       style python:'background-image:url(' + theimage + ')';
                       theclass python:'row_' +
-                      str(number%steps) +' column_' + str(number/steps)" 
+                      str(number%steps) +' column_' + str(number/steps) + ' effect_' + str(number%4)" 
             tal:attributes="class theclass;">
         <div class="imagebox" tal:attributes="style style">
         </div>  

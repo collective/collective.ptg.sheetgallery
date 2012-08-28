@@ -69,7 +69,7 @@ class ISheetgalleryDisplaySettings(IBaseSettings):
     sheetgallery_toppadding = schema.TextLine(
         title=_(u"label_sheetgallery_toppadding",
             default=u"Padding above imagetitle"),
-        default=u"100px")
+        default=u"90px")
     sheetgallery_bottompadding = schema.TextLine(
         title=_(u"label_sheetgallery_bottompadding",
             default=u"Padding below imagedescription"),
@@ -108,14 +108,16 @@ class SheetgalleryDisplayType(BatchingDisplayType):
         return u"""
 <script type="text/javascript">
 $(document).ready(function() {
-    //when mouse enters
-    $('.sheetgallery div').mouseenter(function() {
+    //funny things first
+    $('.imagebox').animate({'margin-top': '0px', 'margin-left': '0px' }, 1500);
+        
+    //then, when mouse enters
+    $('.sheetgallery > div').mouseenter(function() {
         $('.imagebox').fadeTo('fast', 1);
         $('h3.image-title, p.image-desc').hide();    
-        $(this).find('.imagebox').fadeTo(200, %(overlay_opacity)s);
+        $(this).find('.imagebox').fadeTo(100, %(overlay_opacity)s);
         $(this).find('.image-title').slideDown(%(speed)i);
         $(this).find('.image-desc').slideDown(%(speed)i);
-
     });
 });
 </script>
@@ -144,10 +146,13 @@ $(document).ready(function() {
     padding-top: %(toppadding)s;
 }
 
-.sheetgallery p.image-sedc {
+.sheetgallery p.image-desc {
     padding-bottom: %(bottompadding)s;
 }
 
+.imagebox:hover {
+    opcaity: %(overlay_opacity)s);
+}
 
 </style>
 <link rel="stylesheet" type="text/css" href="%(style)s"/>

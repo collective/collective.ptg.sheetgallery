@@ -26,3 +26,5 @@ collective.ptg.sheetgallery.egg-info/requires.txt
 *.pyc
 
 *.zip
+
+*.mo
