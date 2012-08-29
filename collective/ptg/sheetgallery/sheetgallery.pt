@@ -1,10 +1,10 @@
-<div class="sheetgallery" tal:define="steps view/settings/sheetgallery_columns" >
+<div class="sheetgallery" tal:define="steps view/settings/sheetgallery_columns; effectcount view/settings/sheetgallery_effectcount" >
     <tal:images tal:repeat="img view/batch">
     <div tal:define="number repeat/img/index; 
                       theimage img/image_url;
                       style python:'background-image:url(' + theimage + ')';
                       theclass python:'row_' +
-                      str(number%steps) +' column_' + str(number/steps) + ' effect_' + str(number%4)" 
+                      str(number%steps) +' column_' + str(number/steps) + ' effect_' + str(number%effectcount)" 
             tal:attributes="class theclass;">
         <div class="imagebox" tal:attributes="style style">
         </div>  

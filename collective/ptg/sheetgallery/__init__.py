@@ -15,6 +15,23 @@ class ISheetgalleryDisplaySettings(IBaseSettings):
                     u"number if you dont want this)"),
         default=3,
         min=1)
+    sheetgallery_effectcount = schema.Choice(
+        title=_(u"label_sheetgallery_effectcount",
+                default=u"How many slide in effects (4 is from all sides)"),
+        default=4,
+        vocabulary=SimpleVocabulary([
+            SimpleTerm(1, 1,
+                _(u"label_sheetgallery_effectcount1",
+                    default=u"1 (left)")),
+            SimpleTerm(2, 2,
+                _(u"label_sheetgallery_effectcount2", default=u"2 (left, top)")),
+            SimpleTerm(3, 3,
+                _(u"label_sheetgallery_effectcount3", default=u"3 (left, top, right)")),
+            SimpleTerm(4, 4,
+                _(u"label_sheetgallery_effectcount4",
+                    default=u"4 (left, top, right, bottom)")
+            )
+        ]))
     sheetgallery_imagewidth = schema.Int(
         title=_(u"label_sheetgallery_imagewidth",
             default=u"Width of (each) image (when mouse hovers)"),

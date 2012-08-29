@@ -28,10 +28,11 @@
 }
 
 .effect_0 .imagebox {
-    margin-top: -1500px;
-}
-.effect_1 .imagebox {
     margin-left: -5500px;
+}
+
+.effect_1 .imagebox {
+    margin-top: -1500px;
 }
 
 .effect_2 .imagebox {
