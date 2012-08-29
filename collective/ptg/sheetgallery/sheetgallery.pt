@@ -7,14 +7,11 @@
                       str(number%steps) +' column_' + str(number/steps) + ' effect_' + str(number%effectcount)" 
             tal:attributes="class theclass;">
         <div class="imagebox" 
-            tal:define="style python:'background-image:url(' + theimage + ')'"
+        tal:define="style python: view.settings.sheetgallery_use_icons and 
+            'background-image:url(' + theimage + ')' or 
+            'background-image:url(' + thethumb + ')'"
             tal:attributes="style style"  
-            tal:condtion="not: view/settings/sheetgallery_use_icons"
-        </div> 
-        <div class="imagebox" 
-            tal:define="style python:'background-image:url(' + thethumb + ')'"
-            tal:attributes="style style" 
-            tal:condtion="view/settings/sheetgallery_use_icons">
+            >
         </div>  
         <a href="" tal:attributes="href img/link" >      
             <h3 class="image-title" tal:content="img/title">Title</h3> 
