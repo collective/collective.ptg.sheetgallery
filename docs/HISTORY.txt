@@ -1,7 +1,13 @@
 Changelog
 =========
 
-1.1 (2012-08-28)
+1.1 (2012-08-29)
+-------------------
+
+- Added option to set number of effects
+
+
+1.0.1 (2012-08-28)
 -------------------
 
 - Added translations (en + no)
