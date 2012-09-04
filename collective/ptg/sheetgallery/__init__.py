@@ -34,7 +34,7 @@ class ISheetgalleryDisplaySettings(IBaseSettings):
         ]))
     sheetgallery_imagewidth = schema.Int(
         title=_(u"label_sheetgallery_imagewidth",
-            default=u"Width of (each) image (when mouse hovers)"),
+            default=u"Width of (each) image"),
         default=400,
         min=50)
     sheetgallery_imageheight = schema.Int(
