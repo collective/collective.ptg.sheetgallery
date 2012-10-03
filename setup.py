@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.1.1'
+version = '1.1.2'
 
 setup(name='collective.ptg.sheetgallery',
       version=version,
-      description="contact sheet gallery type for plonetruegallery",
+      description="Sheet gallery for plonetruegallery",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
