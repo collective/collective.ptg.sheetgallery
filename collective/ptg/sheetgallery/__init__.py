@@ -46,6 +46,10 @@ class ISheetgalleryDisplaySettings(IBaseSettings):
         title=_(u"label_sheetgallery_use_icons",
             default=u"Use Thumbnail size instead of Size"),
         default=False)
+    sheetgallery_downloadlink = schema.Bool(
+        title=_(u"label_sheetgallery_downloadlink",
+            default=u"Show download link"),
+        default=False)
     sheetgallery_overlay_opacity = schema.Choice(
         title=_(u"label_sheetgallery_overlay_opacity",
                 default=u"Opacity on mouse over"),
@@ -131,10 +135,9 @@ $(document).ready(function() {
     //then, when mouse enters
     $('.sheetgallery > div').mouseenter(function() {
         $('.imagebox').fadeTo('fast', 1);
-        $('h3.image-title, p.image-desc').hide();    
+        $('h3.image-title, p.image-desc, .downloadlink').hide();    
         $(this).find('.imagebox').fadeTo(100, %(overlay_opacity)s);
-        $(this).find('.image-title').slideDown(%(speed)i);
-        $(this).find('.image-desc').slideDown(%(speed)i);
+        $(this).find('.image-title, .image-desc, .downloadlink').slideDown(%(speed)i);
     });
 });
 </script>
