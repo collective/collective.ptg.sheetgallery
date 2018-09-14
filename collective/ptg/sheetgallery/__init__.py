@@ -12,7 +12,7 @@ class ISheetgalleryDisplaySettings(IBaseSettings):
     sheetgallery_columns = schema.Int(
         title=_(u"label_sheetgallery_columns",
             default=u"Number of images before a forced new row (use a high "
-                    u"number if you dont want this)"),
+                    u"number if you don't want this)"),
         default=3,
         min=1)
     sheetgallery_effectcount = schema.Choice(
@@ -89,11 +89,11 @@ class ISheetgalleryDisplaySettings(IBaseSettings):
         ]))
     sheetgallery_toppadding = schema.TextLine(
         title=_(u"label_sheetgallery_toppadding",
-            default=u"Padding above imagetitle"),
+            default=u"Padding above image title"),
         default=u"90px")
     sheetgallery_bottompadding = schema.TextLine(
         title=_(u"label_sheetgallery_bottompadding",
-            default=u"Padding below imagedescription"),
+            default=u"Padding below image description"),
         default=u"70px")
 
     sheetgallery_style = schema.Choice(
