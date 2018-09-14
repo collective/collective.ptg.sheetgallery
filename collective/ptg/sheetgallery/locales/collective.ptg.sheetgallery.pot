@@ -13,7 +13,7 @@
 ##############################################################################
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
+"Project-Id-Version: collective.ptg.sheetgallery 1.0\n"
 "POT-Creation-Date: Tue Sep  4 15:49:58 2012\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -21,6 +21,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Domain: collective.ptg.sheetgallery\n"
 "Generated-By: zope/app/locales/extract.py\n"
 
 #: collective.ptg.sheetgallery:/__init__.py:101

@@ -4,6 +4,7 @@ Changelog
 1.3 (unreleased)
 ------------------
 
+- Updated Gettext files [macagua]
 - Fixed some typos [macagua]
 
 
